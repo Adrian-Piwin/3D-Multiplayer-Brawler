@@ -1961,9 +1961,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.16886522
-  m_Height: 1.8007581
+  m_Height: 1.7304461
   m_Direction: 2
-  m_Center: {x: -0.0013970584, y: -0.0039888015, z: 0.88831824}
+  m_Center: {x: -0.0013970584, y: -0.0039888015, z: 0.92347425}
 --- !u!1 &1376286324
 GameObject:
   m_ObjectHideFlags: 0
@@ -27748,8 +27748,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
-  moveSpeed: 100
-  Jumpforce: 5
+  speed: 7
+  jumpforce: 5
+  jumpDelay: 0
   anim: {fileID: 1208323449}
 --- !u!65 &8418178829016340086
 BoxCollider:
@@ -28485,7 +28486,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8413260954572536857}
   - component: {fileID: 8468108717666188253}
-  - component: {fileID: 8418451575061605906}
   m_Layer: 0
   m_Name: Male
   m_TagString: Untagged
@@ -28493,21 +28493,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8418451575061605906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8418451575061605905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc84fa2bf00f734595115ee897b520b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyObj: {fileID: 8418178829016340083}
-  body: {fileID: 8418178829016340084}
-  speed: 10
 --- !u!1 &8418454811675148063
 GameObject:
   m_ObjectHideFlags: 0
