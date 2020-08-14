@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3458293669764306692}
   - component: {fileID: 3456074466027532099}
+  - component: {fileID: 7586637036759408902}
   m_Layer: 12
   m_Name: Deagle
   m_TagString: Untagged
@@ -165,14 +166,24 @@ MonoBehaviour:
   recoil: 10
   bounce: 0
   bounceForce: 50
+  ammo: 10
   speed: 5000
   accuracy: 100
   bullet: {fileID: 1979048356021752, guid: d82846700d83cc34eb745126e8de58a6, type: 3}
   firePoint: {fileID: 3454411899111898803}
-  playerRb: {fileID: 0}
-  playerTf: {fileID: 0}
-  playerController: {fileID: 0}
-  ignoreCollider: {fileID: 0}
+--- !u!65 &7586637036759408902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456074466027532098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04884431, y: 0.18259272, z: 0.28156894}
+  m_Center: {x: -0.0023868298, y: 0.017621579, z: 0.10073518}
 --- !u!1 &3456145690334808542
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public int handAngleMax;
 
     [Header("References")]
+    public int playerNumber;
     public Animator anim;
     public CapsuleCollider bodyCap;
     public HingeJoint[] armHingeJoints;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 targetRotation;
     private bool isGrounded = true;
     private bool allowedJump = true;
-    private bool isHandEmpty = false;
+    private bool isHandEmpty = true;
     private GameObject currentWeapon;
 
     void Start(){
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R)){
             isRagdoll = !isRagdoll;
+            enableRagdoll(false, ragdollUpTimer);
         }
 
     }
@@ -80,8 +82,6 @@ public class PlayerController : MonoBehaviour
                 anim.enabled = true;
             }
             
-        }else{
-            enableRagdoll();
         }
     }
 
@@ -121,6 +121,8 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+    // Rotate player to mouse
     public void aimAtMouse(){
         //Face mouse
         RaycastHit hit;
@@ -132,7 +134,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Ground collision
+    // Ground collision && resistance when pushing player
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Ground")){
             isGrounded = true;
@@ -140,20 +142,30 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(allowJump());
             }
         }
+
+    }
+
+    public void playerDied(){
+        enableRagdoll(true, 0f);
     }
 
     // Put Weapon in players hand
     public void pickupWeapon(GameObject weapon){
-        isHandEmpty = false;
-        currentWeapon = Instantiate(weapon, hand);
+        if (isHandEmpty){
+            isHandEmpty = false;
+            currentWeapon = Instantiate(weapon, hand);
 
-        graspHand(true);
-        handMovement(true);
+            graspHand(true);
+            handMovement(true);
+        }
     }
 
     // Drop weapon
-    private void dropWeapon(){
-        Destroy(currentWeapon);
+    public void dropWeapon(){
+        currentWeapon.transform.parent = GameObject.Find("Environment").transform;
+        Rigidbody rb = currentWeapon.AddComponent<Rigidbody>();
+        rb.mass = 12;
+        rb.AddForce(transform.forward * 120000f);
         isHandEmpty = true;
 
         graspHand(false);
@@ -229,16 +241,17 @@ public class PlayerController : MonoBehaviour
     }
 
     // Set player to ragdoll
-    private void enableRagdoll(){
+    private void enableRagdoll(bool dead, float timer){
         hipsRb.constraints = RigidbodyConstraints.None;
         bodyCap.enabled = false;
         anim.enabled = false;
-        StartCoroutine(ragdollUp());
+        if (!dead)
+            StartCoroutine(ragdollUp(timer));
     }
 
     // Timer for ragdoll to get up
-    IEnumerator ragdollUp(){
-        yield return new WaitForSeconds(ragdollUpTimer);
+    IEnumerator ragdollUp(float upTime){
+        yield return new WaitForSeconds(upTime);
         hipsRb.constraints = RigidbodyConstraints.FreezeRotation;
         bodyCap.enabled = true;
         anim.enabled = true;
