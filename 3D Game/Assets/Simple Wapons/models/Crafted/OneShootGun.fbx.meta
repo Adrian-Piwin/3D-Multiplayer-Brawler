@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: c00430439e36fdc47ae2ee17322dcd92
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: OneShootGun
+    100004: OneShootGun_EmpytMagazine
+    100006: OneShootGun_GreenMagazine
+    100008: OneShootGun_RedMagazine
+    100010: OneShootGun_VioletMagazine
+    100012: OneShootGun_WhiteMagazine
+    100014: OneShootGun_YellowMagazine
+    400000: //RootNode
+    400002: OneShootGun
+    400004: OneShootGun_EmpytMagazine
+    400006: OneShootGun_GreenMagazine
+    400008: OneShootGun_RedMagazine
+    400010: OneShootGun_VioletMagazine
+    400012: OneShootGun_WhiteMagazine
+    400014: OneShootGun_YellowMagazine
+    2100000: Palete#W
+    2300000: //RootNode
+    2300002: OneShootGun
+    2300004: OneShootGun_EmpytMagazine
+    2300006: OneShootGun_GreenMagazine
+    2300008: OneShootGun_RedMagazine
+    2300010: OneShootGun_VioletMagazine
+    2300012: OneShootGun_WhiteMagazine
+    2300014: OneShootGun_YellowMagazine
+    3300000: //RootNode
+    3300002: OneShootGun
+    3300004: OneShootGun_EmpytMagazine
+    3300006: OneShootGun_GreenMagazine
+    3300008: OneShootGun_RedMagazine
+    3300010: OneShootGun_VioletMagazine
+    3300012: OneShootGun_WhiteMagazine
+    3300014: OneShootGun_YellowMagazine
+    4300000: OneShootGun
+    4300002: OneShootGun_YellowMagazine
+    4300004: OneShootGun_WhiteMagazine
+    4300006: OneShootGun_VioletMagazine
+    4300008: OneShootGun_RedMagazine
+    4300010: OneShootGun_GreenMagazine
+    4300012: OneShootGun_EmpytMagazine
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 0
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

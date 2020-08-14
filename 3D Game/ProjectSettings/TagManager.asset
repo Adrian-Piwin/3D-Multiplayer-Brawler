@@ -17,11 +17,11 @@ TagManager:
   - 
   - Ground
   - Ragdoll
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ragdoll_Body
+  - Hitbox
+  - BulletIgnore
+  - Bullet
+  - WeaponPickup
   - 
   - 
   - 

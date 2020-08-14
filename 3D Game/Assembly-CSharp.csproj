@@ -36,16 +36,37 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Scripts\ParticleSystemController\Serializables.cs" />
      <Compile Include="Assets\LowPolyMale\Demo\Scripts\CameraSetPos.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\RagdollDeath.cs" />
-     <Compile Include="Assets\LowPolyMale\Demo\Scripts\CharacterCreation.cs" />
-     <Compile Include="Assets\LowPolyMale\Demo\Scripts\Spin.cs" />
-     <Compile Include="Assets\Scripts\JointFollowAnimRot.cs" />
-     <Compile Include="Assets\Scripts\Balance.cs" />
      <Compile Include="Assets\Scripts\Motion.cs" />
+     <Compile Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Scripts\ParticleSystemController\SaveParticleSystemScript.cs" />
+     <Compile Include="Assets\Scripts\JointFollowAnimRot.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\FastIK\Scripts\Sample\SampleSinMover.cs" />
+     <Compile Include="Assets\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Balance.cs" />
+     <Compile Include="Assets\Scripts\RagdollDeath.cs" />
+     <Compile Include="Assets\FastIK\Scripts\Sample\SampleProcedualAnimation.cs" />
+     <Compile Include="Assets\Scripts\GunScript.cs" />
+     <Compile Include="Assets\LowPolyMale\Demo\Scripts\CharacterCreation.cs" />
+     <Compile Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Scripts\ParticleSystemController\ParticleSystemController.cs" />
+     <Compile Include="Assets\Scripts\IKAnimation.cs" />
+     <Compile Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Scripts\ParticleSystemController\ParticleSystemControllerEditor.cs" />
+     <Compile Include="Assets\LowPolyMale\Demo\Scripts\Spin.cs" />
+     <Compile Include="Assets\FastIK\Scripts\FastIK\FastIKCCD.cs" />
+     <Compile Include="Assets\FastIK\Scripts\FastIK\FastIKFabric.cs" />
+     <Compile Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Scripts\UniqueProjectiles\ProjectileMoveScript.cs" />
+     <Compile Include="Assets\FastIK\Scripts\Sample\SampleRotator.cs" />
+     <Compile Include="Assets\FastIK\Scripts\FastIK\FastIKLook.cs" />
+     <Compile Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Scripts\UniqueProjectiles\CameraShakeSimpleScript.cs" />
+     <Compile Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Scripts\UniqueProjectiles\RotateToMouseScript.cs" />
+     <Compile Include="Assets\Scripts\RagdollToggle.cs" />
+     <Compile Include="Assets\Scripts\WeaponPickupScript.cs" />
+     <None Include="Assets\FastIK\Documentation.txt" />
      <None Include="Assets\LowPolyMale\Shaders\PlayerMasked.shader" />
+     <None Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Shaders\AdditiveMobile_Scroll01.shader" />
+     <None Include="Assets\GabrielAguiarProductions\Unique_ToonProjectiles_Volume_1\Readme.txt" />
      <None Include="Assets\LowPolyMale\Shaders\AttireMasked.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
