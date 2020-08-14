@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HighlightPlus;
 
 public class WeaponPickupScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class WeaponPickupScript : MonoBehaviour
     public bool spawnIn = true;
 
     private Animator anim;
+    private HighlightEffect highlightController;
 
     void Start(){
         Instantiate(weaponDisplay, new Vector3(0,0,0), Quaternion.identity, gameObject.transform);
@@ -16,6 +18,7 @@ public class WeaponPickupScript : MonoBehaviour
 
         anim = gameObject.GetComponent<Animator>();
         anim.SetBool("isSpawned", spawnIn);
+
     }
 
     void OnTriggerEnter (Collider col){

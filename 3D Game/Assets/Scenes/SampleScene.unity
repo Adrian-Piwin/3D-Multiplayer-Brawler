@@ -13149,8 +13149,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.46166226, y: -0, z: -0, w: 0.8870558}
-  m_LocalPosition: {x: 0.14, y: 18.44, z: -9.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.14, y: 9.93, z: -3.22}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -13662,7 +13662,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1003551885
 BoxCollider:
@@ -13689,7 +13689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec377e069a90884c8fa6d3c81943dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDisplay: {fileID: 1961786250962898, guid: 9568edc4758488945a6405f84b3b41cd,
+  weaponDisplay: {fileID: 1961786250962898, guid: ae3da00f38458404d85a0a7dc0b3612c,
     type: 3}
   weaponPrefab: {fileID: 3456074466027532098, guid: 22985cbbd93898545a14baa9e36ecced,
     type: 3}
@@ -16622,7 +16622,7 @@ Transform:
   - {fileID: 1442091692}
   - {fileID: 1587214353}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 183.394, z: 0}
 --- !u!114 &1188204798
 MonoBehaviour:
