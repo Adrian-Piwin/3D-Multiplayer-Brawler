@@ -2961,6 +2961,37 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000096440315, y: 0.4086614, z: -0.098374724}
     m_Extent: {x: 0.7136204, y: 0.33443317, z: 0.2342974}
   m_DirtyAABB: 0
+--- !u!1 &148618362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 148618363}
+  m_Layer: 0
+  m_Name: Weapon Pickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &148618363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148618362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.129, y: 1.28, z: 1.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1003551884}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &149244462
 GameObject:
   m_ObjectHideFlags: 0
@@ -10232,9 +10263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85da4548dec136347aced3aaffbd6033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FootTarget:
-  - {fileID: 1403221762}
-  - {fileID: 1960500538}
   LookTarget: {fileID: 711538330}
   HandTarget: {fileID: 563374674}
   HandPole: {fileID: 1921758101}
@@ -13390,7 +13418,7 @@ GameObject:
   - component: {fileID: 971665469}
   - component: {fileID: 971665468}
   - component: {fileID: 971665467}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cube
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -13404,13 +13432,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971665465}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.98534375, z: -0, w: 0.1705806}
   m_LocalPosition: {x: 5.96, y: 5.28, z: 0}
   m_LocalScale: {x: 1, y: 6.223, z: 5}
   m_Children: []
   m_Father: {fileID: 1209294721}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 160.357, z: 0}
 --- !u!65 &971665467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13644,7 +13672,7 @@ GameObject:
   - component: {fileID: 1003551887}
   - component: {fileID: 1003551888}
   m_Layer: 14
-  m_Name: Weapon Pickup
+  m_Name: Weapon Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13657,12 +13685,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003551883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9, y: 1.039, z: 2.12}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 148618363}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1003551885
 BoxCollider:
@@ -16622,7 +16650,7 @@ Transform:
   - {fileID: 1442091692}
   - {fileID: 1587214353}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 183.394, z: 0}
 --- !u!114 &1188204798
 MonoBehaviour:
@@ -30029,6 +30057,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8412987304938572251}
+  - component: {fileID: 8418419710527828346}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -30036,6 +30065,103 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8418419710527828346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418419710527828345}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888380afc233049ce9e618f9f36c8ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 0}
+  profileSync: 0
+  previewInEditor: 1
+  effectGroup: 0
+  effectGroupLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  alphaCutOff: 0
+  cullBackFaces: 1
+  ignoreObjectVisibility: 0
+  reflectionProbes: 0
+  depthClip: 0
+  ignore: 0
+  _highlighted: 1
+  fadeInDuration: 0
+  fadeOutDuration: 0
+  flipY: 0
+  constantWidth: 1
+  overlay: 0
+  overlayColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  overlayAnimationSpeed: 1
+  overlayMinIntensity: 0
+  overlayBlending: 1
+  outline: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 0.05
+  outlineQuality: 1
+  outlineDownsampling: 2
+  outlineVisibility: 0
+  outlineOptimalBlit: 1
+  outlineBlitDebug: 0
+  outlineIndependent: 0
+  glow: 0
+  glowWidth: 0.4
+  glowQuality: 1
+  glowDownsampling: 2
+  glowHQColor: {r: 0.64, g: 1, b: 0, a: 1}
+  glowDithering: 1
+  glowBlendMode: 0
+  glowMagicNumber1: 0.75
+  glowMagicNumber2: 0.5
+  glowAnimationSpeed: 0
+  glowVisibility: 0
+  glowOptimalBlit: 1
+  glowBlitDebug: 0
+  glowPasses:
+  - offset: 4
+    alpha: 0.1
+    color: {r: 0.64, g: 1, b: 0, a: 1}
+  - offset: 3
+    alpha: 0.2
+    color: {r: 0.64, g: 1, b: 0, a: 1}
+  - offset: 2
+    alpha: 0.3
+    color: {r: 0.64, g: 1, b: 0, a: 1}
+  - offset: 1
+    alpha: 0.4
+    color: {r: 0.64, g: 1, b: 0, a: 1}
+  innerGlow: 0
+  innerGlowWidth: 1
+  innerGlowColor: {r: 1, g: 1, b: 1, a: 1}
+  innerGlowVisibility: 0
+  targetFX: 0
+  targetFXTexture: {fileID: 0}
+  targetFXColor: {r: 1, g: 1, b: 1, a: 1}
+  targetFXCenter: {fileID: 0}
+  targetFXRotationSpeed: 50
+  targetFXInitialScale: 4
+  targetFXEndScale: 1.5
+  targetFXTransitionDuration: 0.5
+  targetFXStayDuration: 1.5
+  seeThrough: 0
+  seeThroughOccluderMask:
+    serializedVersion: 2
+    m_Bits: 32768
+  seeThroughOccluderThreshold: 0.3
+  seeThroughOccluderCheckInterval: 0.01
+  seeThroughIntensity: 0.8
+  seeThroughTintAlpha: 0.5
+  seeThroughTintColor: {r: 0, g: 0, b: 0, a: 0}
+  seeThroughNoise: 1
+  seeThroughBorder: 0
+  seeThroughBorderColor: {r: 1, g: 1, b: 1, a: 1}
+  seeThroughBorderWidth: 0.1
+  rmsCount: 34
 --- !u!1 &8418424351582010517
 GameObject:
   m_ObjectHideFlags: 0
@@ -30161,8 +30287,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8421180860821682733}
   - component: {fileID: 8418428951095271920}
-  - component: {fileID: 8418428951095271921}
   - component: {fileID: 8418428951095271922}
+  - component: {fileID: 8418428951095271921}
   m_Layer: 10
   m_Name: Spine
   m_TagString: Player1
@@ -30292,7 +30418,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8413260954572536857}
-  - component: {fileID: 8468108717666188253}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player1
@@ -40766,22 +40891,3 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.003414005, y: -0.0441871, z: 0.05042918}
     m_Extent: {x: 0.8582363, y: 0.9227884, z: 0.32291013}
   m_DirtyAABB: 0
---- !u!95 &8468108717666188253
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8418451575061605905}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: 3f0b2e3e70944be4cb01248360174e51, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

@@ -20,12 +20,12 @@ TagManager:
   - 
   - Ground
   - Ragdoll
-  - Ragdoll_Body
-  - Hitbox
-  - BulletIgnore
-  - Bullet
-  - WeaponPickup
-  - 
+  - Player_1
+  - Player_2
+  - Player_3
+  - Player_4
+  - Ground
+  - Walls
   - 
   - 
   - 

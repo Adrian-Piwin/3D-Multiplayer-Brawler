@@ -42,6 +42,8 @@
      <Compile Include="Assets\HighlightPlus\Editor\HighlightSeeThroughOccluderEditor.cs" />
      <Compile Include="Assets\HighlightPlus\Editor\HighlightManagerEditor.cs" />
      <Compile Include="Assets\HighlightPlus\Editor\HighlightTriggerEditor.cs" />
+     <Compile Include="Assets\APR Player\APR\Scripts\Editor\APR_Player_Settings_Injector.cs" />
+     <Compile Include="Assets\APR Player\APR\Scripts\Editor\APR_Player_Binder.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -10,7 +10,6 @@ public class WeaponPickupScript : MonoBehaviour
     public bool spawnIn = true;
 
     private Animator anim;
-    private HighlightEffect highlightController;
 
     void Start(){
         Instantiate(weaponDisplay, new Vector3(0,0,0), Quaternion.identity, gameObject.transform);
