@@ -28,7 +28,7 @@ public class WeaponPickupScript : MonoBehaviour
                 root = root.transform.parent.gameObject;
             }
 
-            PlayerController controller = root.gameObject.GetComponent<PlayerController>();
+            AR_PlayerControllerScript controller = root.gameObject.GetComponent<AR_PlayerControllerScript>();
             if (controller.getHandState()){
                 controller.pickupWeapon(weaponPrefab);
                 Destroy(gameObject);

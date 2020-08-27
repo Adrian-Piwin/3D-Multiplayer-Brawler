@@ -104,6 +104,7 @@
      <Compile Include="Assets\HighlightPlus\Scripts\HighlightSeeThroughOccluder.cs" />
      <Compile Include="Assets\HighlightPlus\Scripts\HighlightEffect.cs" />
      <Compile Include="Assets\Bullets\Unique_ToonProjectiles_Volume_1\Scripts\UniqueProjectiles\RotateToMouseScript.cs" />
+     <Compile Include="Assets\Scripts\AR_PlayerControllerScript.cs" />
      <None Include="Assets\Shaders\UltimateOutlineShadows.shader" />
      <None Include="Assets\APR Player\Examples\Dependancies\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\FastIK\Documentation.txt" />

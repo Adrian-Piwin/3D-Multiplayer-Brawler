@@ -23,7 +23,7 @@ public class GunScript : MonoBehaviour
     public Transform firePoint;
     private Rigidbody playerRb;
     private Transform playerTf;
-    private PlayerController playerController;
+    private AR_PlayerControllerScript playerController;
     private List<Collider> ignoreColliders;
     private float nextTimeToFire = 0f;
 
@@ -33,9 +33,9 @@ public class GunScript : MonoBehaviour
             root = root.transform.parent.gameObject;
         }
 
-        playerTf = root.transform;
-        playerRb = root.GetComponent<Rigidbody>();
-        playerController = root.GetComponent<PlayerController>();
+        playerController = root.GetComponent<AR_PlayerControllerScript>();
+        playerTf = playerController.getHipsTf();
+        playerRb = playerController.getHipsRb();
 
         int num = 5;
         Transform parentT = gameObject.transform;
