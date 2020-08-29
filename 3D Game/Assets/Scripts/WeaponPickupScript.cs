@@ -21,14 +21,9 @@ public class WeaponPickupScript : MonoBehaviour
     }
 
     void OnTriggerEnter (Collider col){
-        if (col.gameObject.layer == 9 || col.gameObject.layer == 10){
+        if (col.gameObject.layer == 17 && col.gameObject.tag == "Player_Main"){
 
-            GameObject root = col.gameObject;
-            while (root.tag != "Player_Main"){
-                root = root.transform.parent.gameObject;
-            }
-
-            AR_PlayerControllerScript controller = root.gameObject.GetComponent<AR_PlayerControllerScript>();
+            AR_PlayerControllerScript controller = col.gameObject.GetComponent<AR_PlayerControllerScript>();
             if (controller.getHandState()){
                 controller.pickupWeapon(weaponPrefab);
                 Destroy(gameObject);

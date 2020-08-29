@@ -24,27 +24,18 @@ public class GunScript : MonoBehaviour
     private Rigidbody playerRb;
     private Transform playerTf;
     private AR_PlayerControllerScript playerController;
-    private List<Collider> ignoreColliders;
     private float nextTimeToFire = 0f;
 
     void Start(){
-        GameObject root = gameObject;
-        while (root.tag != "Player_Main"){
-            root = root.transform.parent.gameObject;
-        }
+        GameObject playerRoot = GameObject.Find("Player PM");
 
-        playerController = root.GetComponent<AR_PlayerControllerScript>();
-        playerTf = playerController.getHipsTf();
-        playerRb = playerController.getHipsRb();
+        playerController = playerRoot.GetComponent<AR_PlayerControllerScript>();
+        playerTf = playerRoot.transform;
+        playerRb = playerRoot.GetComponent<Rigidbody>();
 
         int num = 5;
         Transform parentT = gameObject.transform;
-        ignoreColliders = new List<Collider>();
-        for (int i = 0; i < num; i++){
-            ignoreColliders.Add(parentT.GetComponent<Collider>());
-            parentT = parentT.parent;
-        }
-        
+
     }
 
     // Update is called once per frame
@@ -74,6 +65,6 @@ public class GunScript : MonoBehaviour
     void shoot(){
         playerRb.AddForce(playerTf.forward*-(recoil)*10000);
         GameObject bulletObj = Instantiate(bullet, firePoint.position, firePoint.rotation);
-        bulletObj.GetComponent<ProjectileMoveScript>().setupBullet(bounce, bounceForce, speed, accuracy, damage, impactForce, range, ignoreColliders);
+        bulletObj.GetComponent<ProjectileMoveScript>().setupBullet(bounce, bounceForce, speed, accuracy, damage, impactForce, range);
     }
 }

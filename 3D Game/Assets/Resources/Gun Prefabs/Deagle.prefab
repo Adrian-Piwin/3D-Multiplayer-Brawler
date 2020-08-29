@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3454411899111898803}
-  m_Layer: 12
+  m_Layer: 18
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 3450294776578795130}
   - component: {fileID: 3424179699504750528}
   - component: {fileID: 3432788001765970262}
-  m_Layer: 12
+  m_Layer: 18
   m_Name: desertEagle_Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 3458293669764306692}
   - component: {fileID: 3456074466027532099}
   - component: {fileID: 7586637036759408902}
-  m_Layer: 12
+  m_Layer: 18
   m_Name: Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 3458259328873301556}
   - component: {fileID: 3424273821107769002}
   - component: {fileID: 3432479574045278118}
-  m_Layer: 12
+  m_Layer: 18
   m_Name: desertEagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

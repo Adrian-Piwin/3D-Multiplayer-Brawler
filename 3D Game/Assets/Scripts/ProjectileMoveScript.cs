@@ -28,14 +28,10 @@ public class ProjectileMoveScript : MonoBehaviour {
 	private float damage;
 	private float impactForce;
 	private float range;
-	private List<Collider> collidersIgnore;
 
 	void CreateBullet () {
         startPos = transform.position;
         rb = GetComponent <Rigidbody> ();
-
-		for (int i = 0; i < collidersIgnore.Count; i++)
-			Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), collidersIgnore[i]);
 
 		//used to create a radius for the accuracy and have a very unique randomness
 		if (accuracy != 100) {
@@ -77,7 +73,7 @@ public class ProjectileMoveScript : MonoBehaviour {
 		StartCoroutine(DestroyParticle(range));
 	}
 
-	public void setupBullet(bool bnc, float bncForce, float spd, float acr, float dmg, float impForce, float rng, List<Collider> ignoreCols){
+	public void setupBullet(bool bnc, float bncForce, float spd, float acr, float dmg, float impForce, float rng){
 		bounce = bnc;
 		bounceForce = bncForce;
 		speed = spd;
@@ -85,7 +81,6 @@ public class ProjectileMoveScript : MonoBehaviour {
 		damage = dmg;
 		impactForce = impForce;
 		range = rng;
-		collidersIgnore = ignoreCols;
 
 		CreateBullet();
 	}

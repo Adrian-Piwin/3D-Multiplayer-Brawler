@@ -14,19 +14,23 @@ public class AR_PlayerControllerScript : MonoBehaviour
 
     [Header("References")]
     public Transform groundTransform;
-    public Rigidbody hipsRb;
-    public Transform hipsTf;
     public Transform hand;
-    public CapsuleCollider bodyCap;
 
+    private Rigidbody body;
+    private Animator animator;
     private bool isGrounded = true;
     private bool isHandEmpty = true;
     private GameObject currentWeapon;
 
+    void Start(){
+        body = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+    }
+
     void Update(){
         if (!isRagdoll) jumpInput();
 
-        if (Input.GetKeyDown(KeyCode.E)){
+        if (Input.GetKeyDown(KeyCode.E) && !isHandEmpty){
             dropWeapon();
         }
 
@@ -49,6 +53,12 @@ public class AR_PlayerControllerScript : MonoBehaviour
 
             Vector3 input = new Vector3(horizontal, 0, vertical);
             Vector3 inputRaw = new Vector3(horizontalRaw, 0, verticalRaw);
+
+            // If moving set animation
+            if (horizontal != 0 || vertical != 0)
+                animator.SetBool("isWalking", true);
+            else
+                animator.SetBool("isWalking", false);
             
             movementInput(horizontal, vertical);
             rotateInput(input, inputRaw);
@@ -63,17 +73,23 @@ public class AR_PlayerControllerScript : MonoBehaviour
 
     // Movement
     private void movementInput(float horizontal, float vertical){
-        hipsRb.velocity = new Vector3 (horizontal * speed, hipsRb.velocity.y, vertical * speed);
+        body.velocity = new Vector3 (horizontal * speed, body.velocity.y, vertical * speed);
 
-        if(hipsRb.velocity.magnitude > speed){
-            hipsRb.velocity = hipsRb.velocity.normalized * speed;
+        if(body.velocity.magnitude > speed){
+            body.velocity = body.velocity.normalized * speed;
         }
     }
 
     // Jump
     private void jumpInput(){
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded){
-            hipsRb.AddForce(new Vector3(0, jumpforce*100, 0), ForceMode.Impulse);
+            // Jump animation
+            if (animator.GetBool("isWalking"))
+                animator.Play("Walking_Jump");
+            else
+                animator.Play("Idle_Jump");
+
+            body.AddForce(new Vector3(0, jumpforce*100, 0), ForceMode.Impulse);
             isGrounded = false;
         }
     }
@@ -86,7 +102,7 @@ public class AR_PlayerControllerScript : MonoBehaviour
 
         if (inputRaw != Vector3.zero){
             Vector3 targetRotation = Quaternion.LookRotation(inputRaw).eulerAngles;
-            hipsRb.rotation = Quaternion.Slerp(hipsTf.rotation, Quaternion.Euler(targetRotation.x, Mathf.Round(targetRotation.y / 45) * 45, targetRotation.z), Time.deltaTime * rotationSpeed);
+            body.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(targetRotation.x, Mathf.Round(targetRotation.y / 45) * 45, targetRotation.z), Time.deltaTime * rotationSpeed);
         }
         
     }
@@ -99,7 +115,7 @@ public class AR_PlayerControllerScript : MonoBehaviour
     
         if(Physics.Raycast(ray,out hit,100))
         {
-            hipsRb.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (hit.point - transform.position), rotationSpeed * Time.deltaTime);
+            body.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (hit.point - transform.position), rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -112,6 +128,7 @@ public class AR_PlayerControllerScript : MonoBehaviour
     public void pickupWeapon(GameObject weapon){
         if (isHandEmpty){
             isHandEmpty = false;
+            animator.SetBool("isHoldingGun", true);
             currentWeapon = Instantiate(weapon, hand);
         }
     }
@@ -120,15 +137,15 @@ public class AR_PlayerControllerScript : MonoBehaviour
     public void dropWeapon(){
         currentWeapon.transform.parent = GameObject.Find("Environment").transform;
         Rigidbody rb = currentWeapon.AddComponent<Rigidbody>();
-        rb.mass = 12;
+        rb.mass = 1;
         rb.AddForce(transform.forward * 120000f);
         isHandEmpty = true;
+        animator.SetBool("isHoldingGun", false);
     }
 
     // Set player to ragdoll
     private void enableRagdoll(bool dead, float timer){
-        hipsRb.constraints = RigidbodyConstraints.None;
-        bodyCap.enabled = false;
+        // enable ragdoll
         if (!dead)
             StartCoroutine(ragdollUp(timer));
     }
@@ -136,17 +153,7 @@ public class AR_PlayerControllerScript : MonoBehaviour
     // Timer for ragdoll to get up
     IEnumerator ragdollUp(float upTime){
         yield return new WaitForSeconds(upTime);
-        hipsRb.constraints = RigidbodyConstraints.FreezeRotation;
-        bodyCap.enabled = true;
-        isRagdoll = false;
-    }
-
-    public Transform getHipsTf(){
-        return hipsTf;
-    }
-
-    public Rigidbody getHipsRb(){
-        return hipsRb;
+        // disable ragdoll
     }
 
     public bool getHandState(){
